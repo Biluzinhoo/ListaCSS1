@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foguete</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: linear-gradient(#0b132b 0%, #1c2541 40%, #3a506b 60%);
+      overflow: hidden;
+    }
+
+    .scene {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .nuvem {
+      position: absolute;
+      top: 10vh;
+      left: -35vw;
+      width: 160px;
+      height: 60px;
+      background: #fff;
+      border-radius: 60px;
+      box-shadow:
+        40px 0 0 0 #fff,
+        80px 10px 0 12px #fff,
+        20px -12px 0 10px #fff;
+      filter: drop-shadow(0 6px 6px rgba(0, 0, 0, .08));
+      animation: vento 80s linear infinite;
+      z-index: 0;
+    }
+
+    .nuvem.n2 {
+      top: 18vh;
+      transform: scale(1.2);
+      opacity: 0.9;
+      animation-duration: 95s;
+      animation-delay: -25s;
+    }
+
+    @keyframes vento {
+      from {
+        left: -35vw;
+      }
+
+      to {
+        left: 110vw;
+      }
+    }
+
+    .foguete {
+      position: absolute;
+      bottom: -150px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 120px;
+      background-image: url("foguete.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      animation: decolar 10s linear infinite;
+      z-index: 3;
+    }
+
+    @keyframes decolar {
+      0% {
+        bottom: -150px;
+        opacity: 1;
+      }
+
+      80% {
+        bottom: 120%;
+        opacity: 1;
+      }
+
+      100% {
+        bottom: 140%;
+        opacity: 0;
+      }
+    }
+
+    .fogo {
+      position: absolute;
+      bottom: -49px;
+      left: 50%;
+      width: 30px;
+      height: 60px;
+      transform: translateX(-50%);
+      background: radial-gradient(ellipse at center, #ffdd55 0%, #ff3300 60%, transparent 100%);
+      border-radius: 50% 50% 70% 70%;
+      animation: flame 0.3s infinite alternate;
+      z-index: 2;
+    }
+
+    @keyframes flame {
+      0% {
+        transform: translateX(-50%) scaleY(1);
+        opacity: 0.9;
+      }
+
+      100% {
+        transform: translateX(-50%) scaleY(1.3) scaleX(0.9);
+        opacity: 0.7;
+      }
+    }
+
+    .fumaca {
+      position: absolute;
+      bottom: -40px;
+      left: 50%;
+      width: 20px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 50%;
+      transform: translateX(-50%);
+      animation: fumaça 1.5s ease-in-out infinite;
+      z-index: 1;
+    }
+
+    @keyframes fumaça {
+      0% {
+        transform: translateX(-50%) scale(0.5);
+        opacity: 0.9;
+      }
+
+      100% {
+        transform: translateX(-50%) scale(3) translateY(40px);
+        opacity: 0;
+      }
+    }
+
+    .estrelas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2px;
+      height: 2px;
+      background: white;
+      box-shadow:
+        100px 200px white,
+        300px 150px white,
+        600px 80px white,
+        900px 250px white,
+        1200px 100px white,
+        400px 300px white,
+        700px 200px white,
+        1100px 180px white,
+        50px 400px white,
+        500px 500px white,
+        800px 450px white;
+      animation: piscar 2s infinite alternate;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    @keyframes piscar {
+      from {
+        opacity: 0.3;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="scene">
+    <div class="estrelas"></div>
+    <div class="nuvem"></div>
+    <div class="nuvem n2"></div>
+
+    <div class="foguete">
+      <div class="fogo"></div>
+      <div class="fumaca"></div>
+
+
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>   
+   <title>Exemplo especificidade de seletores</title>
+   <style>
+      /*regra 1*/ li{color:red;}
+      /*regra 2*/ .churras{color:green;}
+      /*regra 3*/ .fruta{color:gray}
+      /*regra 4*/ li+li.churras{color: black;}
+      /*regra 5*/ .churras[draggable="true"]{color: magenta;}
+      /*regra 6*/ #lip1,#lip2,#lip3{color:blue}
+      /*regra 7*/ #lip3.fruta{color:orange}
+      /*regra 8*/ ol>li.churras#lip5{color:purple}
+   </style>
+</head>
+<body>   
+   <ol>
+   <!--item 1--> <li id="lip0">Abacaxi</li>
+   <!--item 2--> <li           class="fruta">Melão</li>
+   <!--item 3--> <li id="lip2" class="fruta">Pera</li>
+   <!--item 4--> <li id="lip3" class="fruta">Uva</li>
+   <!--item 5--> <li id="lip4" class="fruta">Maçã</li>
+   <!--item 6--> <li           class="churras">Carne</li>
+   <!--item 7--> <li           class="churras">Linguiça</li>
+   <!--item 8--> <li id="lip7" class="churras" draggable="true">Pão de alho</li>
+   </ol>   
+<ol>
+    <li>Abacaxi ficou vermelho porque a regra 1 referência todos os 
+    "li" e Abacaxi é um "li".</li> 
+    <li>Melão ficou cinza porque Melão pertence a classe "fruta"</li>
+    <li>Pera ficou azul porque Pera recebeu o "id=lip2" e essa regra é 
+    aplicada nos id "lip1,lip2,lip3"</li>
+    <li>Uva ficou laranja porque essa regra necessita dos critérios: 
+        id="lip3" e class="fruta" e Uva pertence a esses dois critérios </li>
+    <li>Maçã ficou cinza porque Maçã pertence a classe="fruta"</li>
+    <li>Carne ficou preto porque Carne é da classe="churras" e 
+        também está do lado de outro elemento da classe="churras"</li>
+    <li>Linguiça ficou preto porque Linguiça é da classe="churras" e 
+        também está do lado de outro elemento da classe="churras"</li>
+    <li>Pão de Alho ficou magenta porque porque o "draggable" está "true"</li>        
+</ol>
+
+
+</body>
+</html>

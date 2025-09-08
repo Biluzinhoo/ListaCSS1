@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Displays1</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 1400px;
+            height: 150px;
+            margin: 0;
+
+        }
+
+        #p1 {
+            background-color: purple;
+
+        }
+
+        #p2 {
+            background-color: green;
+        }
+
+        #p3 {
+            background-color: red;
+        }
+
+        #p4 {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="p1">1</div>
+    <div class="box" id="p2">2</div>
+    <div class="box" id="p3">3</div>
+    <div class="box" id="p4">4</div>
+
+    <p>O que ocorreu: a largura fixa de 1400px faz os blocos não ocuparem a tela 
+        inteira, o flexbox faz os números dentro dos blocos ficarem centralizados e 
+        o comportamento natural de uma "div" é formar "blocos de linha inteira" e 
+        por isso ficaram um em cima do outro.</p>
+
+</body>
+

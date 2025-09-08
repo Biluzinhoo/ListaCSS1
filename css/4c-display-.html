@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Displays3</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box {
+            position: absolute;
+            text-align: center;
+            line-height: 100px;
+            width: 100px;
+            height: 100px;
+            margin: 0;
+            padding: 0;
+
+
+        }
+
+        #p1 {
+            background-color: red;
+            top: 0;
+            left: 0;
+        }
+
+        #p2 {
+            background-color: yellow;
+            right: 0;
+            top: 0;
+        }
+
+        #p3 {
+            background-color: green;
+            bottom: 0;
+            right: 0;
+        }
+
+        #p4 {
+            background-color: blue;
+            bottom: 0;
+            left: 0;
+        }
+
+        #p5 {
+            background-color: magenta;
+            top: 50%;
+            left: 50%;
+            margin-top: -50px;
+            margin-left: -50px;
+        }
+
+        #Frase {
+            position: absolute;
+            top: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="p1">box1</div>
+    <div class="box" id="p2">box2</div>
+    <div class="box" id="p3">box3</div>
+    <div class="box" id="p4">box4</div>
+    <div class="box" id="p5">box5</div>
+
+
+
+    <div>
+        <p id="Frase">O que ocorreu: Quando é zerado uma posição (top, bottom, right, left) o "box" fica estacionado no extremo da tela porém quando é dado valores de metade o "box" é centralizado.  </p>
+    </div>
+
+
+</body>
